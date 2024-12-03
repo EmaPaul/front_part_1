@@ -211,15 +211,18 @@ h1 {
   color: #000000;
 }
 
+/* Tablero */
 .board {
   display: flex;
   gap: 16px;
   margin-top: -50px;
   padding: 60px;
+  flex-wrap: wrap; 
 }
 
 .column {
   flex: 1;
+  min-width: 250px; 
   background-color: #b2f0d1;
   padding: 12px;
   border-radius: 8px;
@@ -233,6 +236,7 @@ h1 {
   font-weight: bold;
 }
 
+/* Tareas */
 .task {
   background-color: rgb(119, 238, 169);
   padding: 10px;
@@ -252,6 +256,127 @@ h1 {
   margin: 0 0 8px;
   color: #000000;
   font-size: 14px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px; 
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #21a70f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #00b32d;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%; 
+  max-width: 400px;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.modal-body {
+  margin-bottom: 16px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modal-button {
+  padding: 8px 16px;
+  background-color: #21a70f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-button:hover {
+  background-color: #00b32d;
+}
+
+.modal-input, .modal-textarea, .modal-select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.modal-input:focus, .modal-textarea:focus, .modal-select:focus {
+  border-color: #21a70f;
+  box-shadow: 0 0 4px rgba(33, 167, 15, 0.5);
+}
+
+
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column; 
+    padding: 49px;
+  }
+
+  .column {
+    min-width: 100%; 
+    margin-bottom: 16px;
+  }
+
+  .modal-content {
+    width: 100%; 
+    padding: 16px;
+  }
+
+  button {
+    font-size: 12px; 
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px; 
+  }
+
+  .task h3 {
+    font-size: 14px; 
+  }
+
+  .task p {
+    font-size: 12px; 
+  }
 }
 
 .task-actions {
